@@ -1,0 +1,15 @@
+using System;
+
+namespace decorator
+{
+    public class StarBuzzCoffee
+    {
+        public static void Main(string[] args)
+        {
+            Beverage beverage = new DarkRoast();
+            beverage = new Mocha(beverage);
+            beverage = new Whip(beverage);
+            Console.WriteLine(beverage.GetDescription() + " : eur " + beverage.Cost());
+        }
+    }
+}
